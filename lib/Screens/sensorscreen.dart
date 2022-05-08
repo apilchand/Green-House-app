@@ -34,10 +34,11 @@ class _DashboardState extends State<Dashboard>
     });
   }
 
-late final AnimationController progressController;
-  late final Animation<double> tempAnimation;
- late final Animation<double> humidityAnimation;
- late final Animation<double> moistureAnimation;
+ late AnimationController progressController;
+ late Animation<double> tempAnimation;
+  late Animation<double> humidityAnimation;
+   late Animation<double> moistureAnimation;
+ 
 
  DatabaseReference dbref3 =  FirebaseDatabase.instance.ref();
   DatabaseReference dbref = FirebaseDatabase.instance.ref('Temperature');
@@ -65,6 +66,7 @@ late final AnimationController progressController;
       final data3 = event.snapshot.value.toString();
         
    });
+   
  });
     });
 
@@ -73,13 +75,13 @@ late final AnimationController progressController;
       */
 
     dbref.onValue.listen((DatabaseEvent event) {
-      final data1 = event.snapshot.value.toString();
+      var data1 = event.snapshot.value.toString();
 
       dbref1.onValue.listen((DatabaseEvent event) {
-        final data2 = event.snapshot.value.toString();
+        var data2 = event.snapshot.value.toString();
 
         dbref2.onValue.listen((DatabaseEvent event) {
-          final data3 = event.snapshot.value.toString();
+          var data3 = event.snapshot.value.toString();
          // print(data3);
 
           double temp = double.parse(data1);
@@ -104,13 +106,19 @@ print('test');
     
   }
 
-  Future _dashboardInit(double t, double h, double m) async {
+   _dashboardInit(double t, double h, double m) {
+
+      AnimationController progressController;
+ Animation<double> tempAnimation;
+   Animation<double> humidityAnimation;
+  Animation<double> moistureAnimation;
+
     progressController =AnimationController(
         vsync: this, duration: const Duration(milliseconds: 3000));
     print(t);
 
      tempAnimation =
-         Tween<double>(begin: -10, end: 30).animate(progressController)
+         Tween<double>(begin: -10, end: t).animate(progressController)
           ..addListener(() {
             setState(() {});
           });
