@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "578419924731",
+    "firebase_url": "https://greenhouse-6c9fb-default-rtdb.firebaseio.com",
+    "project_id": "greenhouse-6c9fb",
+    "storage_bucket": "greenhouse-6c9fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578419924731:android:23012e7f806e9c2aeeda5e",
+        "android_client_info": {
+          "package_name": "com.greenhouse.minor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578419924731-a7maercg69o26np3m08o6ag8gghc12nj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXU0-UKBN2uYobYQENUkKpg6PEPM3sRj0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578419924731-a7maercg69o26np3m08o6ag8gghc12nj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
